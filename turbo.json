@@ -1,0 +1,48 @@
+{
+  "$schema": "https://turbo.build/schema.json",
+  "globalEnv": ["CI"],
+  "ui": "tui",
+  "tasks": {
+    "build": {
+      "dependsOn": ["^build"],
+      "inputs": ["$TURBO_DEFAULT$", ".env*"],
+      "outputs": ["dist/**", ".next/**", "!.next/cache/**"]
+    },
+    "check-types": {
+      "dependsOn": ["^check-types"]
+    },
+    "clean": {
+      "cache": false
+    },
+    "dev": {
+      "cache": false,
+      "persistent": true
+    },
+    "lint": {
+      "dependsOn": ["^lint"]
+    },
+    "storybook:dev": {
+      "cache": false,
+      "dependsOn": ["^build"],
+      "persistent": true
+    },
+    "storybook:start": {
+      "cache": false,
+      "dependsOn": ["^build"],
+      "persistent": true
+    },
+    "test:e2e": {
+      "dependsOn": ["^build"]
+    },
+    "test:unit": {
+      "dependsOn": ["test:unit:transit-node"]
+    },
+    "test:unit:transit-node": {
+      "dependsOn": ["^test:unit:transit-node"]
+    },
+    "test:unit:watch": {
+      "cache": false,
+      "persistent": true
+    }
+  }
+}

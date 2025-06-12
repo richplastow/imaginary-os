@@ -1,0 +1,2 @@
+# Specify Node 23.11.x when you `npm install` or `nvm use`.
+v23.11

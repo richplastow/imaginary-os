@@ -1,0 +1,38 @@
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# OS files, security and certificates.
+.DS_Store
+*.pem
+
+# Dependencies.
+node_modules/
+.pnp
+.pnp.js
+
+# Test results and coverage.
+coverage.json
+coverage/
+
+# Turbo, Next.js caches and build artifacts.
+.next/
+.swc/
+.turbo/
+build/
+out/
+
+# Storybook build artifacts.
+storybook-static/
+
+# Other build artifacts.
+dist/
+
+# Debug and error logs.
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Environment variables.
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local

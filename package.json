@@ -1,0 +1,61 @@
+{
+  "name": "imaginary-os",
+  "version": "0.0.1",
+  "description": "Transforms markdown files into an interactive desktop and mobile OS ",
+  "homepage": "https://github.com/richplastow/imaginary-os#readme",
+  "bugs": {
+    "url": "https://github.com/richplastow/imaginary-os/issues"
+  },
+  "author": "Rich Plastow",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/richplastow/imaginary-os.git"
+  },
+  "scripts": {
+    "build": "turbo run build",
+    "check-types": "turbo run check-types",
+    "clean": "turbo run clean && turbo daemon stop && rm -rf .next .turbo node_modules/.cache",
+    "dev": "turbo run dev",
+    "dev:ui-stream": "turbo run dev --ui stream",
+    "format": "prettier --write **/*.{css,json,md,ts,tsx}",
+    "lint": "turbo run lint",
+    "ok": "npm run format && turbo run --parallel lint check-types && npm test",
+    "prepare": "husky",
+    "storybook:build": "turbo run storybook:build",
+    "storybook:dev": "turbo run storybook:dev",
+    "storybook:start": "turbo run storybook:start",
+    "test": "npm run test:unit && npm run test:e2e",
+    "test:e2e": "turbo run test:e2e",
+    "test:unit": "turbo run test:unit",
+    "test:unit:watch": "turbo run test:unit:watch",
+    "test:unit:view-report": "turbo run test:unit:view-report"
+  },
+  "dependencies": {
+    "globals": "^16.0.0"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^19.8.0",
+    "@commitlint/config-conventional": "^19.8.0",
+    "@storybook/react-vite": "^8.6.12",
+    "@testing-library/dom": "^10.4.0",
+    "@testing-library/jest-dom": "^6.6.3",
+    "@testing-library/react": "^16.3.0",
+    "@vitejs/plugin-react": "^4.4.1",
+    "husky": "^9.1.7",
+    "jsdom": "^26.1.0",
+    "prettier": "^3.5.3",
+    "prettier-plugin-organize-imports": "^4.1.0",
+    "prettier-plugin-tailwindcss": "^0.6.11",
+    "storybook": "^8.6.12",
+    "turbo": "^2.5.0"
+  },
+  "engines": {
+    "node": ">=23.11 <24"
+  },
+  "private": true,
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "packageManager": "npm@10.9.2"
+}

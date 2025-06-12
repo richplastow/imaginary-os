@@ -1,0 +1,34 @@
+{
+  "extensions": {
+    "recommendations": [
+      "bierner.github-markdown-preview", // bundle of 6 extensions which make VS Code's .md preview work like Github's
+      "bradlc.vscode-tailwindcss", // Tailwind CSS IntelliSense (autocomplete, syntax highlighting, linting)
+      "csstools.postcss", // PostCSS Language Support (adds support for modern and experimental CSS)
+      "dbaeumer.vscode-eslint", // ESLint (integrates ESLint into VS Code)
+      "esbenp.prettier-vscode", // Prettier - Code formatter (enforces consistent style by parsing code and re-printing)
+      "gurumukhi.selected-lines-count", // shows the number of selected lines in the status bar
+    ],
+  },
+  "folders": [{ "path": "." }],
+  "settings": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true, // format using Prettier on save
+    "editor.codeActionsOnSave": {
+      // "source.fixAll.eslint":"always", // uncomment this to auto-fix ESLint issues on save
+      "source.organizeImports": "always",
+    },
+    "editor.rulers": [80, 120], // add vertical rulers at 80 and 120 characters
+    "editor.tabSize": 2, // without this, VS Code defaults to 4 spaces, despite Prettier's `tabWidth: 2` setting
+    "eslint.validate": [
+      "javascript",
+      "javascriptreact",
+      "typescript",
+      "typescriptreact",
+    ],
+    "search.exclude": {
+      "**/*.next": true, // never search inside Next.js caches, even when 'files to include' is ".next"
+      "**/*.turbo": true, // never search inside Turborepo caches, even when 'files to include' is ".turbo"
+      "**/node_modules": false, // allows search inside node_modules/ folders, when 'files to include' is "node_modules"
+    },
+  },
+}

@@ -1,0 +1,37 @@
+{
+  "name": "imaginary-os-main",
+  "version": "1.0.0",
+  "scripts": {
+    "build": "next build",
+    "check-types": "tsc --noEmit",
+    "clean": "rm -rf .next .turbo coverage.json node_modules playwright-report storybook-static test-results",
+    "dev": "next dev --port 3000 --turbopack",
+    "lint": "next lint --max-warnings 0",
+    "start": "next start",
+    "test:unit": "vitest --run",
+    "test:unit:watch": "vitest"
+  },
+  "dependencies": {
+    "next": "^15.2.1",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0"
+  },
+  "devDependencies": {
+    "@next/eslint-plugin-next": "^15.2.2",
+    "@repo/eslint-config": "*",
+    "@repo/tailwind-config": "*",
+    "@repo/typescript-config": "*",
+    "@repo/vitest-config": "*",
+    "@types/node": "^22.13.9",
+    "@types/react": "^19.0.12",
+    "@types/react-dom": "^19.0.4",
+    "autoprefixer": "^10.4.20",
+    "eslint": "^9.23.0",
+    "postcss": "^8.5.3",
+    "tailwindcss": "^3.4.17",
+    "typescript": "5.8.2",
+    "vitest": "^3.1.2"
+  },
+  "private": true,
+  "type": "module"
+}
